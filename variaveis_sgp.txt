@@ -1,0 +1,155 @@
+Variaveis do sistema SGP
+
+Quantidade de dias para cancelar automaticamente contratos suspensos
+DIAS_CANCELA_CONTRATO_SUSPENSO
+
+Abrir ordem de serviço para contratos cancelados
+ABRIR_OS_CANCELA_CONTRATO
+
+Desativa o bloqueio automatico
+BLOQUEIO_DESATIVADO
+
+Dias de promessa de pagamento automatica
+CENTRAL_PROMESSA_QUANTIDADE
+
+Quantidade dias promessa na central
+CENTRAL_PROMESSA_DIAS
+
+Promessa pagamento maximo dias para promessa
+PROMESSAPAGAMENTO_DIAS
+
+Quantidade de promessa de pagamento pela ura/whats/aplicativos em geral URA_PROMESSA_QTD
+
+Dias maximos promessa de pagamento
+URA_PROMESSA_DIAS
+
+Mostra clientes sem fatura
+WIDGET_SEMFATURA_ABERTO 
+valor 1
+
+Pra gerar boletos automaticos
+CLIENTE_AUTOCOBRANCA
+
+Boleto 2 segunda via sem atualização
+CENTRAL_2VIA_ORIGINAL
+
+Apenas um CPF cadastrado no sistema
+CLIENTE_UNIQUE_CPFCNPJ
+
+Não mostra clientes cancelados na pesquisa
+CONSULTA_CANCELADO_OFF
+
+dashboard_clientesemfatura
+dashboard_ocorrenciaresumo
+dashboard_ocorrenciaresumotipo
+dashboard_ocorrenciaresponsavel
+dashboard_osresponsavel
+dashboard_osresponsavel_resumo
+dashboard_promessapagamento
+
+
+VARIAVEIS NOTA FISCAL 
+NF. Período Fixo:
+Customizar informação período(Opcional). Variáveis: EMI_MES, EMI_ANO, VEN_MES, VEN_ANO, PER_POS, PER_PRE, EMI_TOTAL_MES,VEN_TOTAL_MES
+
+
+[11:13, 29/5/2018] Thiago Montenegro SGP: poe login sendo mac e em mac dhcp poe o mac igual
+[11:13, 29/5/2018] Thiago Montenegro SGP: e adicion em sistema configuracoes a variavel MAC_AUTH_NULL
+[11:13, 29/5/2018] Thiago Montenegro SGP: mas vai mudar isso
+[11:13, 29/5/2018] Thiago Montenegro SGP: mas pode usar assim
+[11:13, 29/5/2018] Thiago Montenegro SGP: pq antes nao tinha os tipos de conexao, entao eu fiz isso pra atender 1 cliente
+
+que permite gerar boleto pra os suspenso
+COBRANCA_SUSPENSO
+
+WEBCHAT
+
+cd /app/webchat
+python manage.pyc whatsapp --id=ID_DA_SEGUNDA_CONTA --profile=/app/firefox.profile2
+
+RESUMO_CAIXA_MES
+
+SMS_TITULO
+
+SMS_FATURA_URL
+definir variavel SMS_FATURA_URL
+com o link do seu sgp
+http://ip_do_sgp:8000
+
+
+
+[16:17, 3/10/2018] Thiago Montenegro SGP: BLOQUEIO_V6_PD
+BLOQUEIO_V6_PREFIX
+[16:17, 3/10/2018] Thiago Montenegro SGP: ai poe o nome do pool do pd e do prefix
+[16:17, 3/10/2018] Thiago Montenegro SGP: em configuracoes
+
+
+****TEMPLATES****
+
+Template de recibo em html
+RECIBO_PRINT_HTML
+
+
+PORTADORES
+
+CAIXA
+quando numero inicial começa com numero 24 e existem boletos com inicio 14 para resolver
+
+colocar em parametros de remessa
+{'nnumero_prefix':2,'nnumero_suffix':-1}
+
+
+[10:00, 17/10/2018] Thiago Montenegro SGP: tem uma variavel
+[10:01, 17/10/2018] Thiago Montenegro SGP: chamada CARNE_LAYOUT_SET
+[10:01, 17/10/2018] Thiago Montenegro SGP: ai eu insiro la removendo a variavel sacador_doc
+[10:01, 17/10/2018] Thiago Montenegro SGP: ai nao vai o cpf/cnpj
+
+***%% VARIAVEIS DE EMAIL %%***
+
+aviso de cobrança por email
+EMAIL_AVISO_COBRANCA
+
+Configurar envio de email em html
+EMAIL_FATURA_HTML
+
+EMAIL_FATURA
+
+ Olá CLIENTE_NOME,										
+														
+ Estamos encaminhando o boleto para pagamento.			
+														
+ Dados do Boleto:											
+          Nº Documento: TITULO_NUMERO_DOCUMENTO		
+          Valor: R$ TITULO_VALOR						
+          Vencimento: TITULO_DATA_VENCIMENTO			
+          LINK_BOLETO									
+ Atenciosamente,										
+ PROVEDOR_NOME											
+
+
+EMAIL_FATURA_LISTA
+
+Olá CLIENTE_NOME, <br/>
+
+<p>
+Estamos encaminhando o(s) título(s) abaixo.
+</p>
+<p>
+TABELA_TITULOS
+</p>
+
+Atenciosamente, <br/>
+PROVEDOR_NOME
+
+
+
+***%% VARIAVEIS CORPO MENSAGENS SMS %%*****
+
+{cliente} Nome completo Do cliente
+{cliente1} Primeiro nome do cliente
+{titulo} Numero do titulo
+{valor} Valor em aberto
+{vencimento} Data de vencimento da fatura em aberto
+{provedor} Nome do provedor
+{link} Link do boleto (necessita variavel para envio do link em formato de dominio. em configurações criar uma variavel com o nome SMS_FATURA_URL e no conteudo inserir o seu dominio)
+
